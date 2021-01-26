@@ -1,0 +1,49 @@
+#declarar la clase vehículo
+
+class Vehículo:
+    #declaramos el método __init__
+    def __init__(self):
+        self.marca=input("Ingrese la marca: ")
+        self.color=input("Ingrese el color: ")
+        self.ruedas=input("Número de ruedas: ")
+
+        #declaramos el método mostrar
+    def mostrar(self):
+        print("marca: ",self.marca)
+        print("color: ",self.color)
+        print("ruedas: ",self.ruedas)
+
+#declaramos la clase moto
+#La clase moto hereda los atributos y métodos de la clase Vehículo
+
+class moto(Vehículo):
+    #declaramos el método __init__
+    def __init__(self):
+        #Llamamos al metodo init de la clase padre
+        #Utilizamos la función super() para hacer referencia al padre
+        super().__init__()
+        self.cilindraje=input("Ingrese cilindraje: ")
+        self.velocidad=input("Velocidad: ")
+
+        #declaramos el método mostrar
+    def mostrar(self):
+        super().mostrar()
+        print("cilindraje: ",self.cilindraje)
+        print("velocidad: ",self.velocidad)
+
+class camioneta(Vehículo):
+    def __init__(self):
+        super().__init__()
+        self.carga=input("carga: ")
+
+    def mostrar(self):
+        super().mostrar()
+        print("carga: ",self.carga)
+
+#bloque principal
+vehiculo1=Vehículo()
+vehiculo1.mostrar()
+moto1=moto()
+moto1.mostrar()
+camioneta1=camioneta()
+camioneta1.mostrar()
